@@ -45,14 +45,14 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.IDCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.FNameCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LNameCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.SchoolNameCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.StateCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.EmailCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.YearCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.GradeCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DebtCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ActiveCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +65,7 @@
             this.dataToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(697, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(850, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -146,17 +146,18 @@
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.IDCol,
             this.FNameCol,
-            this.columnHeader3,
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8});
+            this.LNameCol,
+            this.SchoolNameCol,
+            this.StateCol,
+            this.EmailCol,
+            this.YearCol,
+            this.GradeCol,
+            this.DebtCol,
+            this.ActiveCol});
+            this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(13, 28);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(672, 392);
+            this.listView1.Size = new System.Drawing.Size(825, 392);
             this.listView1.TabIndex = 3;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -166,11 +167,52 @@
             this.IDCol.Text = "Member ID";
             this.IDCol.Width = 73;
             // 
+            // FNameCol
+            // 
+            this.FNameCol.Text = "First Name";
+            this.FNameCol.Width = 76;
+            // 
+            // LNameCol
+            // 
+            this.LNameCol.Text = "Last Name";
+            this.LNameCol.Width = 67;
+            // 
+            // SchoolNameCol
+            // 
+            this.SchoolNameCol.Text = "School";
+            // 
+            // StateCol
+            // 
+            this.StateCol.Text = "State";
+            // 
+            // EmailCol
+            // 
+            this.EmailCol.Text = "Email";
+            // 
+            // YearCol
+            // 
+            this.YearCol.Text = "Year Joined";
+            this.YearCol.Width = 75;
+            // 
+            // GradeCol
+            // 
+            this.GradeCol.Text = "Grade";
+            // 
+            // DebtCol
+            // 
+            this.DebtCol.Text = "Amount Owed";
+            this.DebtCol.Width = 96;
+            // 
+            // ActiveCol
+            // 
+            this.ActiveCol.Text = "Active";
+            this.ActiveCol.Width = 72;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 461);
+            this.ClientSize = new System.Drawing.Size(850, 461);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
@@ -203,14 +245,14 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader IDCol;
         private System.Windows.Forms.ColumnHeader FNameCol;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader LNameCol;
+        private System.Windows.Forms.ColumnHeader SchoolNameCol;
+        private System.Windows.Forms.ColumnHeader StateCol;
+        private System.Windows.Forms.ColumnHeader EmailCol;
+        private System.Windows.Forms.ColumnHeader YearCol;
+        private System.Windows.Forms.ColumnHeader GradeCol;
+        private System.Windows.Forms.ColumnHeader DebtCol;
+        private System.Windows.Forms.ColumnHeader ActiveCol;
     }
 }
 
