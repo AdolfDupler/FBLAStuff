@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace MagicData.Classes
 {
-    class Member
+    class Member : IComparable<Member>
     {
         int MemberID;
         string FirstName, LastName;
@@ -19,6 +19,10 @@ namespace MagicData.Classes
         int YearJoined, Grade;
         bool active;
         double AmountOwed;
+        public int compareKey = 0;
+
+        
+
         public Member(AddMember form)
         {
             MemberID = form.MemberIDNum;
@@ -91,5 +95,39 @@ namespace MagicData.Classes
             return retrum;
         }
 
+        public int CompareTo(Member other)
+        {
+            switch(compareKey )
+            {
+                case 0:
+                    return MemberID.CompareTo(other.MemberID);
+                case 1:
+                    return FirstName.CompareTo(other.FirstName);
+                case 2:
+                    return LastName.CompareTo(other.LastName);
+                case 3:
+                    return SchoolName.CompareTo(other.SchoolName);
+                case 4:
+                    return State.CompareTo(other.State);
+                case 5:
+                    return Email.CompareTo(other.Email);
+                case 6:
+                    return YearJoined.CompareTo(other.YearJoined);
+                case 7:
+                    return Grade.CompareTo(other.Grade);
+                case 8:
+                    return active.CompareTo(other.active);
+                case 9:
+                    return AmountOwed.CompareTo(other.AmountOwed);
+                default:
+                    return 0;
+
+
+                
+
+            }
+        }
+
+        
     }
 }

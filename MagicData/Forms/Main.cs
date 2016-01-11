@@ -39,8 +39,20 @@ namespace MagicData
                 connection = new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; Initial Catalog = tempdb; Integrated Security = True;");
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
+
                 command.CommandText = String.Format("CREATE DATABASE {0} ON PRIMARY (NAME = {0}, FILENAME = '{1}'); ", databasename, filename);
+                try {
+                    command.ExecuteNonQuery();
+                }
+                catch(SqlException exc)
+                {
+                    MessageBox.Show("You cannot name your database this.\n\nIf you believe this is an error, show this code to a programmer: " + exc.Message);
+                    return;
+                }
+                command.CommandText = String.Format("EXEC sp_detach_db '{0}', 'true'", databasename);
                 command.ExecuteNonQuery();
+               
+                
                 connection.Close();
                 loadData(filename);
                 
@@ -92,6 +104,17 @@ namespace MagicData
             form.Show();
         }
 
+        private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            foreach(Member mem in LoadedData)
+            {
+                mem.compareKey = e.Column;
+            }
+            LoadedData.Sort();
+           
+            
+        }
+
         private void refreshData(object sender, EventArgs e) //Call this ONLY after the connection has been established.
         {
             LoadedData.Clear();
@@ -115,6 +138,7 @@ namespace MagicData
                 }
                 Console.WriteLine(new Member(enl).toString());
                 LoadedData.Add(new Member(enl));
+                LoadedData.Sort();
             }
             current.Close();
             foreach(Member mem in LoadedData)
