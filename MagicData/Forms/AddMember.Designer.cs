@@ -40,15 +40,15 @@
             this.FNameText = new System.Windows.Forms.MaskedTextBox();
             this.LNameText = new System.Windows.Forms.MaskedTextBox();
             this.SNameText = new System.Windows.Forms.MaskedTextBox();
-            this.StateText = new System.Windows.Forms.MaskedTextBox();
             this.EmailText = new System.Windows.Forms.MaskedTextBox();
             this.YearText = new System.Windows.Forms.MaskedTextBox();
             this.ModBttn = new System.Windows.Forms.Button();
             this.ActiceChckBox = new System.Windows.Forms.CheckBox();
             this.AmountOwedLbl = new System.Windows.Forms.Label();
             this.GradeLabel = new System.Windows.Forms.Label();
-            this.GradeTextBox = new System.Windows.Forms.MaskedTextBox();
             this.AmountOwedText = new System.Windows.Forms.MaskedTextBox();
+            this.GradeComboBox = new System.Windows.Forms.ComboBox();
+            this.StateCombobox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,15 +69,15 @@
             this.tableLayoutPanel1.Controls.Add(this.FNameText, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.LNameText, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.SNameText, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.StateText, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.EmailText, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.YearText, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.ModBttn, 2, 9);
             this.tableLayoutPanel1.Controls.Add(this.ActiceChckBox, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.AmountOwedLbl, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.GradeLabel, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.GradeTextBox, 2, 7);
             this.tableLayoutPanel1.Controls.Add(this.AmountOwedText, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.GradeComboBox, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(this.StateCombobox, 2, 4);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(13, 13);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 10;
@@ -160,6 +160,7 @@
             // MemberIDText
             // 
             this.MemberIDText.Location = new System.Drawing.Point(175, 3);
+            this.MemberIDText.Mask = "0000000";
             this.MemberIDText.Name = "MemberIDText";
             this.MemberIDText.Size = new System.Drawing.Size(81, 20);
             this.MemberIDText.TabIndex = 10;
@@ -167,6 +168,7 @@
             // FNameText
             // 
             this.FNameText.Location = new System.Drawing.Point(175, 26);
+            this.FNameText.Mask = "L????????????";
             this.FNameText.Name = "FNameText";
             this.FNameText.Size = new System.Drawing.Size(81, 20);
             this.FNameText.TabIndex = 11;
@@ -174,6 +176,7 @@
             // LNameText
             // 
             this.LNameText.Location = new System.Drawing.Point(175, 49);
+            this.LNameText.Mask = "L????????????";
             this.LNameText.Name = "LNameText";
             this.LNameText.Size = new System.Drawing.Size(81, 20);
             this.LNameText.TabIndex = 12;
@@ -185,13 +188,6 @@
             this.SNameText.Size = new System.Drawing.Size(81, 20);
             this.SNameText.TabIndex = 13;
             // 
-            // StateText
-            // 
-            this.StateText.Location = new System.Drawing.Point(175, 95);
-            this.StateText.Name = "StateText";
-            this.StateText.Size = new System.Drawing.Size(81, 20);
-            this.StateText.TabIndex = 14;
-            // 
             // EmailText
             // 
             this.EmailText.Location = new System.Drawing.Point(175, 118);
@@ -202,6 +198,7 @@
             // YearText
             // 
             this.YearText.Location = new System.Drawing.Point(175, 141);
+            this.YearText.Mask = "0000";
             this.YearText.Name = "YearText";
             this.YearText.Size = new System.Drawing.Size(81, 20);
             this.YearText.TabIndex = 16;
@@ -244,19 +241,96 @@
             this.GradeLabel.TabIndex = 20;
             this.GradeLabel.Text = "Grade:";
             // 
-            // GradeTextBox
-            // 
-            this.GradeTextBox.Location = new System.Drawing.Point(175, 164);
-            this.GradeTextBox.Name = "GradeTextBox";
-            this.GradeTextBox.Size = new System.Drawing.Size(81, 20);
-            this.GradeTextBox.TabIndex = 19;
-            // 
             // AmountOwedText
             // 
             this.AmountOwedText.Location = new System.Drawing.Point(175, 187);
+            this.AmountOwedText.Mask = "$999.00";
             this.AmountOwedText.Name = "AmountOwedText";
             this.AmountOwedText.Size = new System.Drawing.Size(81, 20);
             this.AmountOwedText.TabIndex = 17;
+            // 
+            // GradeComboBox
+            // 
+            this.GradeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GradeComboBox.FormattingEnabled = true;
+            this.GradeComboBox.Items.AddRange(new object[] {
+            "Freshman",
+            "Sophomore",
+            "Junior",
+            "Senior"});
+            this.GradeComboBox.Location = new System.Drawing.Point(175, 164);
+            this.GradeComboBox.Name = "GradeComboBox";
+            this.GradeComboBox.Size = new System.Drawing.Size(81, 21);
+            this.GradeComboBox.TabIndex = 23;
+            // 
+            // StateCombobox
+            // 
+            this.StateCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.StateCombobox.FormattingEnabled = true;
+            this.StateCombobox.Items.AddRange(new object[] {
+            "AL",
+            "AK",
+            "As",
+            "AZ",
+            "AR",
+            "CA",
+            "CO",
+            "CT",
+            "DE",
+            "DC",
+            "FL",
+            "GA",
+            "GU",
+            "HI",
+            "ID",
+            "IL",
+            "IN",
+            "IA",
+            "KS",
+            "KY",
+            "LA",
+            "ME",
+            "MD",
+            "MH",
+            "MA",
+            "MI",
+            "FM",
+            "MN",
+            "MS",
+            "MO",
+            "MT",
+            "NE",
+            "NV",
+            "NH",
+            "NJ",
+            "NM",
+            "NY",
+            "NC",
+            "ND",
+            "MP",
+            "OH",
+            "OK",
+            "OR",
+            "PW",
+            "PA",
+            "PR",
+            "RI",
+            "SC",
+            "SD",
+            "TN",
+            "TX",
+            "UT",
+            "VT",
+            "VA",
+            "VI",
+            "WA",
+            "WV",
+            "WI",
+            "WY"});
+            this.StateCombobox.Location = new System.Drawing.Point(175, 95);
+            this.StateCombobox.Name = "StateCombobox";
+            this.StateCombobox.Size = new System.Drawing.Size(81, 21);
+            this.StateCombobox.TabIndex = 24;
             // 
             // AddMember
             // 
@@ -286,14 +360,14 @@
         private System.Windows.Forms.MaskedTextBox FNameText;
         private System.Windows.Forms.MaskedTextBox LNameText;
         private System.Windows.Forms.MaskedTextBox SNameText;
-        private System.Windows.Forms.MaskedTextBox StateText;
         private System.Windows.Forms.MaskedTextBox EmailText;
         private System.Windows.Forms.MaskedTextBox YearText;
         private System.Windows.Forms.Button ModBttn;
         private System.Windows.Forms.CheckBox ActiceChckBox;
         private System.Windows.Forms.Label AmountOwedLbl;
         private System.Windows.Forms.Label GradeLabel;
-        private System.Windows.Forms.MaskedTextBox GradeTextBox;
         private System.Windows.Forms.MaskedTextBox AmountOwedText;
+        private System.Windows.Forms.ComboBox GradeComboBox;
+        private System.Windows.Forms.ComboBox StateCombobox;
     }
 }

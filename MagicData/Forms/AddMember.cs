@@ -33,8 +33,15 @@ namespace MagicData.Forms
 
         private void CreateBttn_Click(object sender, EventArgs e)
         {
-            InitValues();
+            try {
+                InitValues();
 
+                
+            }
+            catch(Exception exc)
+            {
+                MessageBox.Show("Registration of member has failed. Please check your inputs and try again.\n\nError Code: " + exc.Message);
+            }
             Member lad = new Member(this);
             SqlCommand com = lad.AddToSQL();
             com.Connection = connection;
@@ -49,11 +56,11 @@ namespace MagicData.Forms
             FirstName = FNameText.Text;
             LastName = LNameText.Text;
             SchoolName = SNameText.Text;
-            StateName = StateText.Text;
+            StateName = StateCombobox.Text;
             Email = EmailText.Text;
             YearJoined = Convert.ToInt32(YearText.Text);
-            Grade = Convert.ToInt32(GradeTextBox.Text);
-            AmountOwed = Convert.ToDouble(AmountOwedText.Text);
+            Grade = Convert.ToInt32(GradeComboBox.SelectedIndex + 9);
+            AmountOwed = Convert.ToDouble(AmountOwedText.Text.Remove(0,1));
             Active = ActiceChckBox.Checked;
 
         }

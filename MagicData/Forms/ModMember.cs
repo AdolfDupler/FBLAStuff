@@ -15,5 +15,7 @@ namespace MagicData.Forms
         {
             InitializeComponent();
         }
+
+        
     }
 }
