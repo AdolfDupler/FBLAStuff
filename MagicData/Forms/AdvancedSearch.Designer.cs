@@ -40,8 +40,27 @@
             this.checkBox9 = new System.Windows.Forms.CheckBox();
             this.checkBox10 = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox7 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox8 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox9 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox10 = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -160,6 +179,12 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Controls.Add(this.maskedTextBox4, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.maskedTextBox3, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.maskedTextBox2, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.comboBox8, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.comboBox7, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.comboBox6, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.checkBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.checkBox10, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.checkBox2, 0, 1);
@@ -172,6 +197,16 @@
             this.tableLayoutPanel1.Controls.Add(this.checkBox6, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.comboBox1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.comboBox2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.comboBox3, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.comboBox4, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.comboBox5, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.maskedTextBox1, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.maskedTextBox5, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.maskedTextBox6, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.maskedTextBox7, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.maskedTextBox8, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(this.maskedTextBox9, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.maskedTextBox10, 2, 9);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(15, 25);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 10;
@@ -188,9 +223,48 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(427, 424);
             this.tableLayoutPanel1.TabIndex = 11;
             // 
+            // comboBox8
+            // 
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Items.AddRange(new object[] {
+            "IS GREATER THAN",
+            "IS LESS THAN",
+            "IS EQUAL TO"});
+            this.comboBox8.Location = new System.Drawing.Point(145, 339);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(136, 21);
+            this.comboBox8.TabIndex = 17;
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Items.AddRange(new object[] {
+            "IS GREATER THAN",
+            "IS LESS THAN",
+            "IS EQUAL TO"});
+            this.comboBox7.Location = new System.Drawing.Point(145, 297);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(136, 21);
+            this.comboBox7.TabIndex = 17;
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Items.AddRange(new object[] {
+            "IS GREATER THAN",
+            "IS LESS THAN",
+            "IS EQUAL TO"});
+            this.comboBox6.Location = new System.Drawing.Point(145, 255);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(136, 21);
+            this.comboBox6.TabIndex = 16;
+            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "CONTAINS",
+            "MATCHES"});
             this.comboBox1.Location = new System.Drawing.Point(145, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(136, 21);
@@ -199,16 +273,152 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "CONTAINS",
+            "MATCHES"});
             this.comboBox2.Location = new System.Drawing.Point(145, 45);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(136, 21);
             this.comboBox2.TabIndex = 12;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "CONTAINS",
+            "MATCHES"});
+            this.comboBox3.Location = new System.Drawing.Point(145, 87);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(136, 21);
+            this.comboBox3.TabIndex = 13;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "CONTAINS",
+            "MATCHES"});
+            this.comboBox4.Location = new System.Drawing.Point(145, 129);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(136, 21);
+            this.comboBox4.TabIndex = 14;
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "CONTAINS",
+            "MATCHES"});
+            this.comboBox5.Location = new System.Drawing.Point(145, 213);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(136, 21);
+            this.comboBox5.TabIndex = 15;
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(287, 3);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(137, 20);
+            this.maskedTextBox1.TabIndex = 18;
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Location = new System.Drawing.Point(287, 45);
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(137, 20);
+            this.maskedTextBox2.TabIndex = 19;
+            // 
+            // maskedTextBox3
+            // 
+            this.maskedTextBox3.Location = new System.Drawing.Point(287, 87);
+            this.maskedTextBox3.Name = "maskedTextBox3";
+            this.maskedTextBox3.Size = new System.Drawing.Size(137, 20);
+            this.maskedTextBox3.TabIndex = 20;
+            // 
+            // maskedTextBox4
+            // 
+            this.maskedTextBox4.Location = new System.Drawing.Point(287, 129);
+            this.maskedTextBox4.Name = "maskedTextBox4";
+            this.maskedTextBox4.Size = new System.Drawing.Size(137, 20);
+            this.maskedTextBox4.TabIndex = 21;
+            // 
+            // maskedTextBox5
+            // 
+            this.maskedTextBox5.Location = new System.Drawing.Point(287, 171);
+            this.maskedTextBox5.Name = "maskedTextBox5";
+            this.maskedTextBox5.Size = new System.Drawing.Size(137, 20);
+            this.maskedTextBox5.TabIndex = 22;
+            // 
+            // maskedTextBox6
+            // 
+            this.maskedTextBox6.Location = new System.Drawing.Point(287, 213);
+            this.maskedTextBox6.Name = "maskedTextBox6";
+            this.maskedTextBox6.Size = new System.Drawing.Size(137, 20);
+            this.maskedTextBox6.TabIndex = 23;
+            // 
+            // maskedTextBox7
+            // 
+            this.maskedTextBox7.Location = new System.Drawing.Point(287, 255);
+            this.maskedTextBox7.Name = "maskedTextBox7";
+            this.maskedTextBox7.Size = new System.Drawing.Size(137, 20);
+            this.maskedTextBox7.TabIndex = 24;
+            // 
+            // maskedTextBox8
+            // 
+            this.maskedTextBox8.Location = new System.Drawing.Point(287, 297);
+            this.maskedTextBox8.Name = "maskedTextBox8";
+            this.maskedTextBox8.Size = new System.Drawing.Size(137, 20);
+            this.maskedTextBox8.TabIndex = 25;
+            // 
+            // maskedTextBox9
+            // 
+            this.maskedTextBox9.Location = new System.Drawing.Point(287, 339);
+            this.maskedTextBox9.Name = "maskedTextBox9";
+            this.maskedTextBox9.Size = new System.Drawing.Size(137, 20);
+            this.maskedTextBox9.TabIndex = 26;
+            // 
+            // maskedTextBox10
+            // 
+            this.maskedTextBox10.Location = new System.Drawing.Point(287, 381);
+            this.maskedTextBox10.Name = "maskedTextBox10";
+            this.maskedTextBox10.Size = new System.Drawing.Size(137, 20);
+            this.maskedTextBox10.TabIndex = 27;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(157, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Where:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(299, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Values:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(160, 460);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(136, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // AdvancedSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(454, 495);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Name = "AdvancedSearch";
@@ -235,6 +445,25 @@
         private System.Windows.Forms.CheckBox checkBox10;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox5;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox6;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox7;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox8;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox9;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox10;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
     }
 }
