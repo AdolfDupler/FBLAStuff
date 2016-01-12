@@ -46,7 +46,7 @@ namespace MagicData
                 }
                 catch(SqlException exc)
                 {
-                    MessageBox.Show("You cannot name your database this.\n\nIf you believe this is an error, show this code to a programmer: " + exc.Message);
+                    MessageBox.Show("You cannot name your database this.\n\nError Code: " + exc.Message);
                     return;
                 }
                 command.CommandText = String.Format("EXEC sp_detach_db '{0}', 'true'", databasename);
@@ -113,6 +113,22 @@ namespace MagicData
             LoadedData.Sort();
            
             
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new AdvancedSearch().Show();
+        }
+
+       
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            int i = 0;
+            while (i--> 0)
+            {
+                Console.WriteLine(i);
+            }
         }
 
         private void refreshData(object sender, EventArgs e) //Call this ONLY after the connection has been established.

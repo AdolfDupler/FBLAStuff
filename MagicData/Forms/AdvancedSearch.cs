@@ -15,6 +15,26 @@ namespace MagicData.Forms
         public AdvancedSearch()
         {
             InitializeComponent();
+            
+        }
+
+        private void ChckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox box = (CheckBox)sender;
+            foreach(Control c in tableLayoutPanel1.Controls)
+            {
+                if (c.Tag == box.Tag & !c.Equals(box))
+                {
+                    c.Enabled = box.Checked;
+                    if(c is ComboBox)
+                    {
+                        ComboBox combo = (ComboBox) c;
+                        combo.SelectedIndex = 0;
+                    }
+
+
+                }
+            }
         }
     }
 }

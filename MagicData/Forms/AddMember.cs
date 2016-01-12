@@ -41,13 +41,25 @@ namespace MagicData.Forms
             catch(Exception exc)
             {
                 MessageBox.Show("Registration of member has failed. Please check your inputs and try again.\n\nError Code: " + exc.Message);
+                return;
             }
             Member lad = new Member(this);
             SqlCommand com = lad.AddToSQL();
             com.Connection = connection;
-            connection.Open();
-            com.ExecuteNonQuery();
-            connection.Close();
+            try
+            {
+
+
+                connection.Open();
+                com.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch(SqlException exc)
+            {
+                MessageBox.Show("Writing to database has failed. Please check your connection, then try again.\n\nError Code: " + exc.Message);
+                return;
+            }
+            MessageBox.Show("Registration Successful.");
             this.Close();
         }
         private void InitValues()
