@@ -11,6 +11,7 @@ namespace MagicData.Classes
 {
     class Member : IComparable<Member>
     {
+        public static readonly string[] columns = { "MemberID", "FirstName", "LastName", "SchoolName", "State", "Email", "YearJoined", "Grade", "Active", "AmountOwed" };
         int MemberID;
         string FirstName, LastName;
         string SchoolName;

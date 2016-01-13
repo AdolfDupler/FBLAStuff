@@ -40,7 +40,7 @@ namespace MagicData.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new AdvSearch(this);
+            new AdvSearch(this).toCommandSearch();
         }
     }
 }

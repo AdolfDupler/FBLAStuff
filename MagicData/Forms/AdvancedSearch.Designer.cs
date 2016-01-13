@@ -55,12 +55,12 @@
             this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox7 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox9 = new System.Windows.Forms.MaskedTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.comboBox10 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -172,10 +172,10 @@
             // checkBox9
             // 
             this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(3, 339);
+            this.checkBox9.Location = new System.Drawing.Point(3, 381);
             this.checkBox9.Name = "checkBox9";
             this.checkBox9.Size = new System.Drawing.Size(93, 17);
-            this.checkBox9.TabIndex = 9;
+            this.checkBox9.TabIndex = 10;
             this.checkBox9.Tag = "Amount Owed";
             this.checkBox9.Text = "Amount Owed";
             this.checkBox9.UseVisualStyleBackColor = true;
@@ -184,10 +184,10 @@
             // checkBox10
             // 
             this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(3, 381);
+            this.checkBox10.Location = new System.Drawing.Point(3, 339);
             this.checkBox10.Name = "checkBox10";
             this.checkBox10.Size = new System.Drawing.Size(56, 17);
-            this.checkBox10.TabIndex = 10;
+            this.checkBox10.TabIndex = 9;
             this.checkBox10.Tag = "Active";
             this.checkBox10.Text = "Active";
             this.checkBox10.UseVisualStyleBackColor = true;
@@ -202,13 +202,10 @@
             this.tableLayoutPanel1.Controls.Add(this.maskedTextBox4, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.maskedTextBox3, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.maskedTextBox2, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox8, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.comboBox7, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.comboBox6, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.MembershipChckBox, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox10, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.checkBox2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox9, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.checkBox3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.checkBox8, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.checkBox4, 0, 3);
@@ -223,10 +220,13 @@
             this.tableLayoutPanel1.Controls.Add(this.maskedTextBox1, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.maskedTextBox6, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.maskedTextBox7, 2, 6);
-            this.tableLayoutPanel1.Controls.Add(this.maskedTextBox9, 2, 8);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 2, 9);
             this.tableLayoutPanel1.Controls.Add(this.comboBox9, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.comboBox10, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox9, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox10, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.maskedTextBox9, 2, 9);
+            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.comboBox8, 1, 9);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(15, 25);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 10;
@@ -278,7 +278,7 @@
             "IS GREATER THAN",
             "IS LESS THAN",
             "IS EQUAL TO"});
-            this.comboBox8.Location = new System.Drawing.Point(145, 339);
+            this.comboBox8.Location = new System.Drawing.Point(145, 381);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(136, 21);
             this.comboBox8.TabIndex = 17;
@@ -407,39 +407,11 @@
             // maskedTextBox9
             // 
             this.maskedTextBox9.Enabled = false;
-            this.maskedTextBox9.Location = new System.Drawing.Point(287, 339);
+            this.maskedTextBox9.Location = new System.Drawing.Point(287, 381);
             this.maskedTextBox9.Name = "maskedTextBox9";
             this.maskedTextBox9.Size = new System.Drawing.Size(137, 20);
             this.maskedTextBox9.TabIndex = 26;
             this.maskedTextBox9.Tag = "Amount Owed";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(157, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Where:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(299, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Values:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(160, 460);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox1
             // 
@@ -448,7 +420,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "TRUE",
             "FALSE"});
-            this.comboBox1.Location = new System.Drawing.Point(287, 381);
+            this.comboBox1.Location = new System.Drawing.Point(287, 339);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(137, 21);
             this.comboBox1.TabIndex = 27;
@@ -538,6 +510,34 @@
             this.comboBox10.Size = new System.Drawing.Size(137, 21);
             this.comboBox10.TabIndex = 29;
             this.comboBox10.Tag = "Grade";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(157, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Where:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(299, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Values:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(160, 460);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(136, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AdvancedSearch
             // 
