@@ -250,7 +250,7 @@
             this.StateCombobox.Items.AddRange(new object[] {
             "AL",
             "AK",
-            "As",
+            "AS",
             "AZ",
             "AR",
             "CA",

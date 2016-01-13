@@ -52,15 +52,15 @@
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox7 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox8 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox9 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox10 = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -221,12 +221,12 @@
             this.tableLayoutPanel1.Controls.Add(this.comboBox4, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.comboBox5, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.maskedTextBox1, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.maskedTextBox5, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.maskedTextBox6, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.maskedTextBox7, 2, 6);
-            this.tableLayoutPanel1.Controls.Add(this.maskedTextBox8, 2, 7);
-            this.tableLayoutPanel1.Controls.Add(this.maskedTextBox10, 2, 9);
             this.tableLayoutPanel1.Controls.Add(this.maskedTextBox9, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 2, 9);
+            this.tableLayoutPanel1.Controls.Add(this.comboBox9, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.comboBox10, 2, 7);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(15, 25);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 10;
@@ -386,15 +386,6 @@
             this.maskedTextBox1.TabIndex = 18;
             this.maskedTextBox1.Tag = "MembershipID";
             // 
-            // maskedTextBox5
-            // 
-            this.maskedTextBox5.Enabled = false;
-            this.maskedTextBox5.Location = new System.Drawing.Point(287, 171);
-            this.maskedTextBox5.Name = "maskedTextBox5";
-            this.maskedTextBox5.Size = new System.Drawing.Size(137, 20);
-            this.maskedTextBox5.TabIndex = 22;
-            this.maskedTextBox5.Tag = "State";
-            // 
             // maskedTextBox6
             // 
             this.maskedTextBox6.Enabled = false;
@@ -413,15 +404,6 @@
             this.maskedTextBox7.TabIndex = 24;
             this.maskedTextBox7.Tag = "Year";
             // 
-            // maskedTextBox8
-            // 
-            this.maskedTextBox8.Enabled = false;
-            this.maskedTextBox8.Location = new System.Drawing.Point(287, 297);
-            this.maskedTextBox8.Name = "maskedTextBox8";
-            this.maskedTextBox8.Size = new System.Drawing.Size(137, 20);
-            this.maskedTextBox8.TabIndex = 25;
-            this.maskedTextBox8.Tag = "Grade";
-            // 
             // maskedTextBox9
             // 
             this.maskedTextBox9.Enabled = false;
@@ -430,15 +412,6 @@
             this.maskedTextBox9.Size = new System.Drawing.Size(137, 20);
             this.maskedTextBox9.TabIndex = 26;
             this.maskedTextBox9.Tag = "Amount Owed";
-            // 
-            // maskedTextBox10
-            // 
-            this.maskedTextBox10.Enabled = false;
-            this.maskedTextBox10.Location = new System.Drawing.Point(287, 381);
-            this.maskedTextBox10.Name = "maskedTextBox10";
-            this.maskedTextBox10.Size = new System.Drawing.Size(137, 20);
-            this.maskedTextBox10.TabIndex = 27;
-            this.maskedTextBox10.Tag = "Active";
             // 
             // label2
             // 
@@ -466,6 +439,105 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Enabled = false;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "TRUE",
+            "FALSE"});
+            this.comboBox1.Location = new System.Drawing.Point(287, 381);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(137, 21);
+            this.comboBox1.TabIndex = 27;
+            this.comboBox1.Tag = "Active";
+            // 
+            // comboBox9
+            // 
+            this.comboBox9.Enabled = false;
+            this.comboBox9.FormattingEnabled = true;
+            this.comboBox9.Items.AddRange(new object[] {
+            "AL",
+            "AK",
+            "AS",
+            "AZ",
+            "AR",
+            "CA",
+            "CO",
+            "CT",
+            "DE",
+            "DC",
+            "FL",
+            "GA",
+            "GU",
+            "HI",
+            "ID",
+            "IL",
+            "IN",
+            "IA",
+            "KS",
+            "KY",
+            "LA",
+            "ME",
+            "MD",
+            "MH",
+            "MA",
+            "MI",
+            "FM",
+            "MN",
+            "MS",
+            "MO",
+            "MT",
+            "NE",
+            "NV",
+            "NH",
+            "NJ",
+            "NM",
+            "NY",
+            "NC",
+            "ND",
+            "MP",
+            "OH",
+            "OK",
+            "OR",
+            "PW",
+            "PA",
+            "PR",
+            "RI",
+            "SC",
+            "SD",
+            "TN",
+            "TX",
+            "UT",
+            "VT",
+            "VA",
+            "VI",
+            "WA",
+            "WV",
+            "WI",
+            "WY"});
+            this.comboBox9.Location = new System.Drawing.Point(287, 171);
+            this.comboBox9.Name = "comboBox9";
+            this.comboBox9.Size = new System.Drawing.Size(137, 21);
+            this.comboBox9.TabIndex = 28;
+            this.comboBox9.Tag = "State";
+            // 
+            // comboBox10
+            // 
+            this.comboBox10.Enabled = false;
+            this.comboBox10.FormattingEnabled = true;
+            this.comboBox10.Items.AddRange(new object[] {
+            "Freshman",
+            "Sophmore",
+            "Junior",
+            "Senior"});
+            this.comboBox10.Location = new System.Drawing.Point(287, 297);
+            this.comboBox10.Name = "comboBox10";
+            this.comboBox10.Size = new System.Drawing.Size(137, 21);
+            this.comboBox10.TabIndex = 29;
+            this.comboBox10.Tag = "Grade";
             // 
             // AdvancedSearch
             // 
@@ -512,14 +584,14 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBox3;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox5;
         private System.Windows.Forms.MaskedTextBox maskedTextBox6;
         private System.Windows.Forms.MaskedTextBox maskedTextBox7;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox8;
         private System.Windows.Forms.MaskedTextBox maskedTextBox9;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox10;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox9;
+        private System.Windows.Forms.ComboBox comboBox10;
     }
 }

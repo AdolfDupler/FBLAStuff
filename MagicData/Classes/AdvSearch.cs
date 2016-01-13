@@ -16,37 +16,44 @@ namespace MagicData.Classes
 
         public AdvSearch(AdvancedSearch form)
         {
-            int index = 0;
-            foreach (Control c in form.Controls[0].Controls)
+            int i = 0;
+            foreach (CheckBox chckbx in form.Controls[3].Controls.OfType<CheckBox>().OrderBy(val => val.TabIndex))
             {
-                if (c is CheckBox)
+                searchingFor[i] = chckbx.Checked;
+                if (chckbx.Checked)
                 {
-                    searchingFor[index] = ((CheckBox)c).Checked;
+                    MaskedTextBox text = form.Controls[3].Controls.OfType<MaskedTextBox>().Where(t => t.Tag == chckbx.Tag).ElementAtOrDefault(0);
 
-                    if (((CheckBox)c).Checked)
+                    IEnumerable<ComboBox> boxes = form.Controls[3].Controls.OfType<ComboBox>().Where(t => t.Tag == chckbx.Tag).OrderBy(c => c.TabIndex);
+                    if(text == null)
                     {
-                        foreach (Control c2 in form.Controls[0].Controls)
+                        if(boxes.ElementAtOrDefault(1) == null)
                         {
-                            if (!(c2 is CheckBox) && c2.Tag == c.Tag)
-                            {
-                                if (c2 is ComboBox)
-                                {
-                                    searchingCriteria[index] = ((ComboBox)c2).SelectedIndex;
-                                }
-                                else
-                                {
-                                    searchingValues[index] = ((MaskedTextBox)c2).Text;
-                                }
-                            }
+                            searchingValues[i] = boxes.ElementAt(0).Text;
+                        }
+                        else
+                        {
+                            searchingCriteria[i] = boxes.ElementAt(0).SelectedIndex + 1;
+                            searchingValues[i] = boxes.ElementAt(1).Text;
                         }
                     }
-                    index++;
+                    else
+                    {
+                        searchingCriteria[i] = boxes.ElementAt(0).SelectedIndex + 1;
+                        searchingValues[i] = text.Text;
+                    }
+                        
+                            
                 }
-            }
-            for(int i = 0; i < 10; i++)
-            {
+                i++;
 
+                
             }
+            for(int iny = 0; iny < 10; iny++)
+            {
+                Console.WriteLine(searchingFor[iny] + ":" + searchingCriteria[iny] + ":" + searchingValues[iny]);
+            }
+            
 
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MagicData.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,6 +36,11 @@ namespace MagicData.Forms
 
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new AdvSearch(this);
         }
     }
 }
