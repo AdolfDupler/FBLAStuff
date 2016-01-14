@@ -84,7 +84,7 @@ namespace MagicData
             SqlCommand command = new SqlCommand();
             current.Open();
             command.Connection = current;
-            command.CommandText = "IF( NOT EXISTS (SELECT * FROM sys.tables WHERE [name] = 'Members'))BEGIN CREATE TABLE Members (MemberID int, FirstName ntext, LastName ntext, SchoolName ntext, State ntext, Email ntext, YearJoined int, Grade int, Active bit, AmountOwed money) END;";
+            command.CommandText = "IF( NOT EXISTS (SELECT * FROM sys.tables WHERE [name] = 'Members'))BEGIN CREATE TABLE Members (MemberID int NOT NULL, FirstName nvarchar(13), LastName nvarchar(13), SchoolName nvarchar(50), State nvarchar(2), Email nvarchar(50), YearJoined int, Grade int, Active bit, AmountOwed money, PRIMARY KEY (MemberID)) END;";
             command.ExecuteNonQuery();
             current.Close();
             PullData();
@@ -113,7 +113,7 @@ namespace MagicData
             {
                 mem.compareKey = e.Column;
             }
-            LoadedData.Sort();
+            refreshData();
            
             
         }
@@ -127,15 +127,12 @@ namespace MagicData
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            int i = 0;
-            while (i--> 0)
-            {
-                Console.WriteLine(i);
-            }
+            new ModMember(LoadedData.ElementAt(listView1.SelectedIndices[0])).Show();
         }
 
         private void refreshData() //Call this ONLY after the connection has been established.
         {
+            listView1.Items.Clear();
             LoadedData.Sort();
             foreach(Member mem in LoadedData)
             {
@@ -167,7 +164,7 @@ namespace MagicData
                 object[] enl = new object[10];
                 data.GetValues(enl);
                 LoadedData.Add(new Member(enl));
-                LoadedData.Sort();
+                
             }
             current.Close();
             refreshData();

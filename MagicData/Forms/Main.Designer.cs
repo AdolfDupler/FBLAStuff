@@ -50,11 +50,10 @@
             this.EmailCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.YearCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.GradeCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.DebtCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ActiveCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.ActiveCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DebtCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -144,10 +143,10 @@
             this.EmailCol,
             this.YearCol,
             this.GradeCol,
-            this.DebtCol,
-            this.ActiveCol});
+            this.ActiveCol,
+            this.DebtCol});
             this.listView1.FullRowSelect = true;
-            this.listView1.Location = new System.Drawing.Point(13, 28);
+            this.listView1.Location = new System.Drawing.Point(12, 27);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(825, 392);
             this.listView1.TabIndex = 3;
@@ -191,16 +190,6 @@
             // 
             this.GradeCol.Text = "Grade";
             // 
-            // DebtCol
-            // 
-            this.DebtCol.Text = "Amount Owed";
-            this.DebtCol.Width = 96;
-            // 
-            // ActiveCol
-            // 
-            this.ActiveCol.Text = "Active";
-            this.ActiveCol.Width = 72;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(718, 426);
@@ -221,21 +210,20 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
-            // label1
+            // ActiveCol
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(202, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(412, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "HEY IDIOT< YOU HAVE TO CHANGE ALL YOUR STRINGS TO SOMETHING NICE";
+            this.ActiveCol.Text = "Active";
+            // 
+            // DebtCol
+            // 
+            this.DebtCol.Text = "Amount Owed";
+            this.DebtCol.Width = 94;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 461);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.listView1);
@@ -274,11 +262,10 @@
         private System.Windows.Forms.ColumnHeader EmailCol;
         private System.Windows.Forms.ColumnHeader YearCol;
         private System.Windows.Forms.ColumnHeader GradeCol;
-        private System.Windows.Forms.ColumnHeader DebtCol;
-        private System.Windows.Forms.ColumnHeader ActiveCol;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ColumnHeader ActiveCol;
+        private System.Windows.Forms.ColumnHeader DebtCol;
     }
 }
 

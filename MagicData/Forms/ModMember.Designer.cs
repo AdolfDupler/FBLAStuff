@@ -161,6 +161,7 @@
             // 
             this.MemberIDText.Location = new System.Drawing.Point(175, 3);
             this.MemberIDText.Name = "MemberIDText";
+            this.MemberIDText.ReadOnly = true;
             this.MemberIDText.Size = new System.Drawing.Size(81, 20);
             this.MemberIDText.TabIndex = 10;
             // 
@@ -207,6 +208,7 @@
             this.ModBttn.TabIndex = 9;
             this.ModBttn.Text = "Modify";
             this.ModBttn.UseVisualStyleBackColor = true;
+            this.ModBttn.Click += new System.EventHandler(this.ModBttn_Click);
             // 
             // ActiceChckBox
             // 
@@ -317,10 +319,10 @@
             this.GradeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GradeComboBox.FormattingEnabled = true;
             this.GradeComboBox.Items.AddRange(new object[] {
-            "9",
-            "10",
-            "11",
-            "12"});
+            "Freshman",
+            "Sophmore",
+            "Junior",
+            "Senior"});
             this.GradeComboBox.Location = new System.Drawing.Point(175, 164);
             this.GradeComboBox.Name = "GradeComboBox";
             this.GradeComboBox.Size = new System.Drawing.Size(81, 21);
