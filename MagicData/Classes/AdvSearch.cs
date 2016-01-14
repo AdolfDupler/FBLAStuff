@@ -91,8 +91,7 @@ namespace MagicData.Classes
                                 com.Parameters.Add("@" + Member.columns[i], SqlDbType.NText).Value = searchingValues[i];
                                 break;
                             default:
-                                throw new Exception("WHAT THE HELL DID YOU DO?");
-                                                                         
+                                throw new Exception("WHAT THE HELL DID YOU DO?");                                                                      
                         }
 
                     }
@@ -111,15 +110,15 @@ namespace MagicData.Classes
                                 break;
                             default:
                                 throw new Exception("Somehow, you broke out of the norm. Congrats.");
-
-                            
                                 
-
-
                         }
                     }
+                    commandMaker.Append("AND ");
                 }
             }
+            commandMaker.Append("1 = 1;");
+            
+
             com.CommandText = commandMaker.ToString();
             Console.WriteLine(com.CommandText);
             return com;

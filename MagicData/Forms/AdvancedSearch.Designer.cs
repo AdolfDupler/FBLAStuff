@@ -43,7 +43,6 @@
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.MemIDCombox = new System.Windows.Forms.ComboBox();
@@ -54,10 +53,11 @@
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox7 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox9 = new System.Windows.Forms.MaskedTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.comboBox10 = new System.Windows.Forms.ComboBox();
+            this.maskedTextBox9 = new System.Windows.Forms.MaskedTextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -247,6 +247,7 @@
             // 
             this.maskedTextBox4.Enabled = false;
             this.maskedTextBox4.Location = new System.Drawing.Point(287, 129);
+            this.maskedTextBox4.Mask = "CCCCCCCCCCCCCCCCCCCCCC";
             this.maskedTextBox4.Name = "maskedTextBox4";
             this.maskedTextBox4.Size = new System.Drawing.Size(137, 20);
             this.maskedTextBox4.TabIndex = 21;
@@ -256,6 +257,7 @@
             // 
             this.maskedTextBox3.Enabled = false;
             this.maskedTextBox3.Location = new System.Drawing.Point(287, 87);
+            this.maskedTextBox3.Mask = "CCCCCCCCCCCCCCCCCCCCCC";
             this.maskedTextBox3.Name = "maskedTextBox3";
             this.maskedTextBox3.Size = new System.Drawing.Size(137, 20);
             this.maskedTextBox3.TabIndex = 20;
@@ -265,24 +267,11 @@
             // 
             this.maskedTextBox2.Enabled = false;
             this.maskedTextBox2.Location = new System.Drawing.Point(287, 45);
+            this.maskedTextBox2.Mask = "CCCCCCCCCCCCCCCCCCCCCC";
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(137, 20);
             this.maskedTextBox2.TabIndex = 19;
             this.maskedTextBox2.Tag = "First Name";
-            // 
-            // comboBox8
-            // 
-            this.comboBox8.Enabled = false;
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Items.AddRange(new object[] {
-            "IS GREATER THAN",
-            "IS LESS THAN",
-            "IS EQUAL TO"});
-            this.comboBox8.Location = new System.Drawing.Point(145, 381);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(136, 21);
-            this.comboBox8.TabIndex = 17;
-            this.comboBox8.Tag = "Amount Owed";
             // 
             // comboBox7
             // 
@@ -317,8 +306,9 @@
             this.MemIDCombox.Enabled = false;
             this.MemIDCombox.FormattingEnabled = true;
             this.MemIDCombox.Items.AddRange(new object[] {
-            "CONTAINS",
-            "MATCHES"});
+            "IS GREATER THAN",
+            "IS LESS THAN",
+            "IS EQUAL TO"});
             this.MemIDCombox.Location = new System.Drawing.Point(145, 3);
             this.MemIDCombox.Name = "MemIDCombox";
             this.MemIDCombox.Size = new System.Drawing.Size(136, 21);
@@ -381,6 +371,7 @@
             // 
             this.maskedTextBox1.Enabled = false;
             this.maskedTextBox1.Location = new System.Drawing.Point(287, 3);
+            this.maskedTextBox1.Mask = "9999999";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(137, 20);
             this.maskedTextBox1.TabIndex = 18;
@@ -399,32 +390,11 @@
             // 
             this.maskedTextBox7.Enabled = false;
             this.maskedTextBox7.Location = new System.Drawing.Point(287, 255);
+            this.maskedTextBox7.Mask = "0000";
             this.maskedTextBox7.Name = "maskedTextBox7";
             this.maskedTextBox7.Size = new System.Drawing.Size(137, 20);
             this.maskedTextBox7.TabIndex = 24;
             this.maskedTextBox7.Tag = "Year";
-            // 
-            // maskedTextBox9
-            // 
-            this.maskedTextBox9.Enabled = false;
-            this.maskedTextBox9.Location = new System.Drawing.Point(287, 381);
-            this.maskedTextBox9.Name = "maskedTextBox9";
-            this.maskedTextBox9.Size = new System.Drawing.Size(137, 20);
-            this.maskedTextBox9.TabIndex = 26;
-            this.maskedTextBox9.Tag = "Amount Owed";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "TRUE",
-            "FALSE"});
-            this.comboBox1.Location = new System.Drawing.Point(287, 339);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(137, 21);
-            this.comboBox1.TabIndex = 27;
-            this.comboBox1.Tag = "Active";
             // 
             // comboBox9
             // 
@@ -510,6 +480,45 @@
             this.comboBox10.Size = new System.Drawing.Size(137, 21);
             this.comboBox10.TabIndex = 29;
             this.comboBox10.Tag = "Grade";
+            // 
+            // maskedTextBox9
+            // 
+            this.maskedTextBox9.Enabled = false;
+            this.maskedTextBox9.Location = new System.Drawing.Point(287, 381);
+            this.maskedTextBox9.Mask = "$000.00";
+            this.maskedTextBox9.Name = "maskedTextBox9";
+            this.maskedTextBox9.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.maskedTextBox9.Size = new System.Drawing.Size(137, 20);
+            this.maskedTextBox9.TabIndex = 26;
+            this.maskedTextBox9.Tag = "Amount Owed";
+            this.maskedTextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Enabled = false;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "TRUE",
+            "FALSE"});
+            this.comboBox1.Location = new System.Drawing.Point(287, 339);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(137, 21);
+            this.comboBox1.TabIndex = 27;
+            this.comboBox1.Tag = "Active";
+            // 
+            // comboBox8
+            // 
+            this.comboBox8.Enabled = false;
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Items.AddRange(new object[] {
+            "IS GREATER THAN",
+            "IS LESS THAN",
+            "IS EQUAL TO"});
+            this.comboBox8.Location = new System.Drawing.Point(145, 381);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(136, 21);
+            this.comboBox8.TabIndex = 17;
+            this.comboBox8.Tag = "Amount Owed";
             // 
             // label2
             // 

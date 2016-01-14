@@ -19,15 +19,16 @@ namespace MagicData.Forms
         public int YearJoined, Grade;
         public double AmountOwed;
         public bool Active;
-
+        private Main parent;
         public SqlConnection connection; 
 
         
         
-        public AddMember()
+        public AddMember(Main sender)
 
         {
             InitializeComponent();
+            parent = sender;
             
         }
 
@@ -60,6 +61,7 @@ namespace MagicData.Forms
                 return;
             }
             MessageBox.Show("Registration Successful.");
+            parent.PullData();
             this.Close();
         }
         private void InitValues()

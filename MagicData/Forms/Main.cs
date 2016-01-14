@@ -87,6 +87,9 @@ namespace MagicData
             command.CommandText = "IF( NOT EXISTS (SELECT * FROM sys.tables WHERE [name] = 'Members'))BEGIN CREATE TABLE Members (MemberID int, FirstName ntext, LastName ntext, SchoolName ntext, State ntext, Email ntext, YearJoined int, Grade int, Active bit, AmountOwed money) END;";
             command.ExecuteNonQuery();
             current.Close();
+            PullData();
+            
+
 
 
 
@@ -99,7 +102,7 @@ namespace MagicData
                 MessageBox.Show("YOU MUST SPECIFY A DTABASE");
                 return;
             }
-            AddMember form = new AddMember();
+            AddMember form = new AddMember(this);
             form.connection = current;
             form.Show();
         }
@@ -117,7 +120,7 @@ namespace MagicData
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new AdvancedSearch().Show();
+            new AdvancedSearch(this).Show();
         }
 
        
@@ -131,7 +134,21 @@ namespace MagicData
             }
         }
 
-        private void refreshData(object sender, EventArgs e) //Call this ONLY after the connection has been established.
+        private void refreshData() //Call this ONLY after the connection has been established.
+        {
+            LoadedData.Sort();
+            foreach(Member mem in LoadedData)
+            {
+                listView1.Items.Add(mem.ToListViewItem());
+            }
+        }
+        public void loadQueryData(List<Member> querified)
+        {
+            listView1.Items.Clear();
+            LoadedData = querified;
+            refreshData();
+        }
+        public void PullData()
         {
             LoadedData.Clear();
             if (current == null)
@@ -143,26 +160,18 @@ namespace MagicData
             current.Open();
             SqlDataReader data = query.ExecuteReader();
             
-            
-            while(data.Read())
+
+
+            while (data.Read())
             {
                 object[] enl = new object[10];
                 data.GetValues(enl);
-                foreach(object ob in enl)
-                {
-                    Console.WriteLine(ob.ToString());
-                }
-                Console.WriteLine(new Member(enl).toString());
                 LoadedData.Add(new Member(enl));
                 LoadedData.Sort();
             }
             current.Close();
-            foreach(Member mem in LoadedData)
-            {
-                listView1.Items.Add(mem.ToListViewItem());
-            }
-        }
-
+            refreshData();
+        }    
         
     }
 }

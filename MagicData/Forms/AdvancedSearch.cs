@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,11 +13,12 @@ namespace MagicData.Forms
 {
     public partial class AdvancedSearch : Form
     {
-
-        public AdvancedSearch()
+        public Main parent;
+        
+        public AdvancedSearch(Main load)
         {
             InitializeComponent();
-            
+            parent = load;
         }
 
         private void ChckBox_CheckedChanged(object sender, EventArgs e)
@@ -40,7 +42,23 @@ namespace MagicData.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new AdvSearch(this).toCommandSearch();
+            SqlCommand query = new AdvSearch(this).toCommandSearch();
+            query.Connection = parent.current;
+            parent.current.Open();
+            SqlDataReader readData = query.ExecuteReader();
+            List<Member> results = new List<Member>();
+            while (readData.Read())
+            {
+                object[] row = new object[10];
+                readData.GetValues(row);
+                results.Add(new Member(row));
+
+            }
+            parent.current.Close();
+            parent.loadQueryData(results);
+
+            
+
         }
     }
 }

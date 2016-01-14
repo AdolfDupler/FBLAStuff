@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace MagicData.Classes
 {
-    class Member : IComparable<Member>
+    public class Member : IComparable<Member>
     {
         public static readonly string[] columns = { "MemberID", "FirstName", "LastName", "SchoolName", "State", "Email", "YearJoined", "Grade", "Active", "AmountOwed" };
         int MemberID;
