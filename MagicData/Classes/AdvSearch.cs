@@ -32,8 +32,8 @@ namespace MagicData.Classes
                         if(boxes.ElementAtOrDefault(1) == null)
                         {
                             
-                            searchingValues[i] = boxes.ElementAt(0).Text;
-                            if (searchingValues[i].ToString().Length < 3) searchingValues[i] = "'" + searchingValues[i] + "'";
+                            searchingValues[i] = "'" + boxes.ElementAt(0).Text + "'";
+                            
                                 
                         }
                         else

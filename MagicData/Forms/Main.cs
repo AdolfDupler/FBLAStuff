@@ -127,10 +127,13 @@ namespace MagicData
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            new ModMember(LoadedData.ElementAt(listView1.SelectedIndices[0])).Show();
+            ModMember form = new ModMember(LoadedData.ElementAt(listView1.SelectedIndices[0]));
+            form.parent = this;
+            form.con = current;
+            form.Show();
         }
 
-        private void refreshData() //Call this ONLY after the connection has been established.
+        private void refreshData() 
         {
             listView1.Items.Clear();
             LoadedData.Sort();

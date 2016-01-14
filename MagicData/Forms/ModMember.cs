@@ -22,10 +22,36 @@ namespace MagicData.Forms
         public bool active;
 
         public SqlConnection con;
+        public Main parent;
 
         private void ModBttn_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                InitValues();
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Registration of member has failed. Please check your inputs and try again.\n\nError Code: " + exc.Message);
+                return;
+            }
+            SqlCommand command = new Member(this).UpdateIntoSQL();
+            command.Connection = con;
+            Console.WriteLine(con.ConnectionString);
+            con.Open();
+            try
+            {
+                Console.WriteLine(command.ExecuteNonQuery());
+            }
+            catch(Exception exc)
+            {
+                MessageBox.Show("It broke.\n\nMessage:" + exc.Message);
+                return;
+            }
+            con.Close();
+            MessageBox.Show("Update Successful.");
+            parent.PullData();
+            Close();
         }
 
         public double AmountOwed;
@@ -52,7 +78,20 @@ namespace MagicData.Forms
 
 
         }
+        private void InitValues()
+        {
+            MemberID = Convert.ToInt32(MemberIDText.Text);
+            FirstName = FNameText.Text;
+            LastName = LNameText.Text;
+            SchoolName = SNameText.Text;
+            State = StateCombobox.Text;
+            Email = EmailText.Text;
+            YearJoined = Convert.ToInt32(YearText.Text);
+            Grade = Convert.ToInt32(GradeComboBox.SelectedIndex + 9);
+            AmountOwed = Convert.ToDouble(AmountOwedText.Text.Remove(0, 1));
+            active = ActiceChckBox.Checked;
 
-        
+        }
+
     }
 }

@@ -160,7 +160,7 @@ namespace MagicData.Classes
         public SqlCommand UpdateIntoSQL()
         {
 
-            string snippet = "UPDATE Members SET FirstName = @FirstName, LastName = @LastName, SchoolName = @SchoolName, State=@State, Email=@Email, YearJoined=@YearJoined, Grade=@Grade, Active=@Active, AmountOwed=@AmountOwed WHERE MemberID = @MemberID";
+            string snippet = "UPDATE Members SET FirstName = @FirstName, LastName = @LastName, SchoolName = @SchoolName, State=@State, Email=@Email, YearJoined=@YearJoined, Grade=@Grade, Active=@Active, AmountOwed=@AmountOwed WHERE MemberID = @MemberID;";
             SqlCommand command = new SqlCommand(snippet);
             command.Parameters.Add("@MemberID", SqlDbType.Int).Value = MemberID;
             command.Parameters.Add("@FirstName", SqlDbType.NVarChar).Value = FirstName;
@@ -172,6 +172,7 @@ namespace MagicData.Classes
             command.Parameters.Add("@Grade", SqlDbType.Int).Value = Grade;
             command.Parameters.Add("@Active", SqlDbType.Bit).Value = active;
             command.Parameters.Add("@AmountOwed", SqlDbType.Money).Value = AmountOwed;
+            
             return command;
 
 
