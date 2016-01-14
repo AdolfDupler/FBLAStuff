@@ -91,7 +91,7 @@ namespace MagicData.Classes
             retrum.SubItems.Add(Email);
             retrum.SubItems.Add(YearJoined.ToString());
             retrum.SubItems.Add(Grade.ToString());
-            retrum.SubItems.Add(AmountOwed.ToString());
+            retrum.SubItems.Add(AmountOwed.ToString("C"));
             retrum.SubItems.Add(active.ToString());
             return retrum;
         }

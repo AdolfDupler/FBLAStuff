@@ -83,8 +83,8 @@ namespace MagicData.Classes
                                 commandMaker.Append(Member.columns[i] + "=" + searchingValues[i] + " ");
                                 break;
                             case 1:
-                                commandMaker.Append(Member.columns[i] + " LIKE '%' + @" + Member.columns[i] + " + '%' ");
-                                com.Parameters.Add("@" + Member.columns[i], SqlDbType.NText).Value = searchingValues[i];
+                                commandMaker.Append(Member.columns[i] + " LIKE  @" + Member.columns[i] + " ");
+                                com.Parameters.Add("@" + Member.columns[i], SqlDbType.NText).Value = "%"+ searchingValues[i] + "%";
                                 break;
                             case 2:
                                 commandMaker.Append(Member.columns[i] + "=" + "@" + Member.columns[i] + " ");
