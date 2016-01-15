@@ -168,6 +168,7 @@
             // FNameText
             // 
             this.FNameText.Location = new System.Drawing.Point(175, 26);
+            this.FNameText.Mask = "CCCCCCCCCCCCC";
             this.FNameText.Name = "FNameText";
             this.FNameText.Size = new System.Drawing.Size(81, 20);
             this.FNameText.TabIndex = 11;
@@ -175,6 +176,7 @@
             // LNameText
             // 
             this.LNameText.Location = new System.Drawing.Point(175, 49);
+            this.LNameText.Mask = "CCCCCCCCCCCCC";
             this.LNameText.Name = "LNameText";
             this.LNameText.Size = new System.Drawing.Size(81, 20);
             this.LNameText.TabIndex = 12;
@@ -196,6 +198,7 @@
             // YearText
             // 
             this.YearText.Location = new System.Drawing.Point(175, 141);
+            this.YearText.Mask = "0000";
             this.YearText.Name = "YearText";
             this.YearText.Size = new System.Drawing.Size(81, 20);
             this.YearText.TabIndex = 16;
@@ -241,6 +244,7 @@
             // AmountOwedText
             // 
             this.AmountOwedText.Location = new System.Drawing.Point(175, 187);
+            this.AmountOwedText.Mask = "$990.00";
             this.AmountOwedText.Name = "AmountOwedText";
             this.AmountOwedText.Size = new System.Drawing.Size(81, 20);
             this.AmountOwedText.TabIndex = 17;

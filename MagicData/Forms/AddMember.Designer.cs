@@ -244,7 +244,7 @@
             // AmountOwedText
             // 
             this.AmountOwedText.Location = new System.Drawing.Point(175, 187);
-            this.AmountOwedText.Mask = "$999.00";
+            this.AmountOwedText.Mask = "$990.00";
             this.AmountOwedText.Name = "AmountOwedText";
             this.AmountOwedText.Size = new System.Drawing.Size(81, 20);
             this.AmountOwedText.TabIndex = 17;

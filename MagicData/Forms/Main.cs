@@ -148,6 +148,12 @@ namespace MagicData
             LoadedData = querified;
             refreshData();
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            new ConnectionForm().Show();
+        }
+
         public void PullData()
         {
             LoadedData.Clear();
