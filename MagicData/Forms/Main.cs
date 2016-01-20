@@ -12,12 +12,19 @@ using System.Windows.Forms;
 
 namespace MagicData
 {
+    /// <summary>
+    /// This is the class form the opening window, aka the "Main Menu".
+    /// 
+    /// </summary>
     public partial class Main : Form
     {
         public string loadedPath = "", loadedName;
         private List<Member> LoadedData = new List<Member>();
         public SqlConnection current;
         private string title = "MagicData - Main Menu";
+        /// <summary>
+        /// This is the default constructor. Add to it but beware.
+        /// </summary>
         public Main()
         {
             InitializeComponent();
@@ -28,7 +35,13 @@ namespace MagicData
         }
 
         
-
+        /// <summary>
+        /// This method is called when the user hit the new button.
+        /// This method creates a database at the filepath specified by save file dialog.
+        /// It then calls load data on that database.
+        /// </summary>
+        /// <param name="sender"> Object that sent the action</param>
+        /// <param name="e">Various event arguements.</param>
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SqlConnection connection;
@@ -64,14 +77,26 @@ namespace MagicData
                 
             }
         }
-
+        /// <summary>
+        /// Simple action for opening a local databse. It just calls load data on specified database.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if(openFileDialog1.ShowDialog() == DialogResult.OK)
             {
+                SqlConnection.ClearAllPools();
                 loadData(openFileDialog1.FileName);
+                
             }
         }
+        /// <summary>
+        /// This is the loading method for initializing a local database for use with the program.
+        /// It sets the current connection string to point to the database, and it creates a members table if it does not exist.
+        /// It also initializes all the variables neccessary for the program to operate.
+        /// </summary>
+        /// <param name="path"></param>
         private void loadData(string path)
         {
             loadedPath = path.Replace('/', '\\');
@@ -94,7 +119,11 @@ namespace MagicData
 
 
         }
-
+        /// <summary>
+        /// This opens a new add member form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void registerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if(current == null)
@@ -106,7 +135,12 @@ namespace MagicData
             form.connection = current;
             form.Show();
         }
-
+        /// <summary>
+        /// This iterates through the loaded data, sorting it into
+        /// the specified order. It also refreshes the data.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             foreach(Member mem in LoadedData)
@@ -117,34 +151,38 @@ namespace MagicData
            
             
         }
-
+        /// <summary>
+        /// This is the action for opening a new advanced search.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             new AdvancedSearch(this).Show();
         }
 
        
-
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            ModMember form = new ModMember(LoadedData.ElementAt(listView1.SelectedIndices[0]));
-            form.parent = this;
-            form.con = current;
-            form.Show();
-        }
-
+        
+        /// <summary>
+        /// This will place all loaded data into the mai list view
+        /// in the order currently established in the member list.
+        /// </summary>
         private void refreshData() 
         {
-            listView1.Items.Clear();
+            ViewWindowListView.Items.Clear();
             LoadedData.Sort();
             foreach(Member mem in LoadedData)
             {
-                listView1.Items.Add(mem.ToListViewItem());
+                ViewWindowListView.Items.Add(mem.ToListViewItem());
             }
         }
+        /// <summary>
+        /// This is the main method for changing the loaded data.
+        /// </summary>
+        /// <param name="querified"></param>
         public void loadQueryData(List<Member> querified)
         {
-            listView1.Items.Clear();
+            ViewWindowListView.Items.Clear();
             LoadedData = querified;
             refreshData();
         }
@@ -154,6 +192,18 @@ namespace MagicData
             new ConnectionForm().Show();
         }
 
+        private void modifyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModMember form = new ModMember(LoadedData.ElementAt(ViewWindowListView.SelectedIndices[0]));
+            form.parent = this;
+            form.con = current;
+            form.Show();
+        }
+
+        /// <summary>
+        /// This loads all the data from the database into the form, as well
+        /// as refreshing it.
+        /// </summary>
         public void PullData()
         {
             LoadedData.Clear();
@@ -177,7 +227,7 @@ namespace MagicData
             }
             current.Close();
             refreshData();
-        }    
-        
+        }
+       
     }
 }
