@@ -18,6 +18,7 @@ namespace MagicData
         private List<Member> LoadedData = new List<Member>();
         public SqlConnection current;
         private string title = "MagicData - Main Menu";
+        private float[] columnPercents = { .09f, 0.09f, .09f, .18f, .04f, .2f, .05f, .1f, .05f, .1f };
         public Main()
         {
             InitializeComponent();
@@ -152,6 +153,23 @@ namespace MagicData
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             new ConnectionForm().Show();
+        }
+
+        private void listView1_Resize(object sender, EventArgs e)
+        {
+            scaleColumns();
+        }
+        private void scaleColumns()
+        {
+            for(int i =0; i < 10; i++)
+            {
+                listView1.Columns[i].Width = (int)(listView1.Width * columnPercents[i]);
+            }
+        }
+
+        private void listView1_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
+        {
+
         }
 
         public void PullData()
