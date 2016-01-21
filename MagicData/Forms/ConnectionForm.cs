@@ -19,6 +19,7 @@ namespace MagicData.Forms
         public void CreateConnection()
         {
             SqlConnectionStringBuilder bob = new SqlConnectionStringBuilder();
+            bob.ConnectTimeout = 5;
             bob.DataSource = textBox1.Text;
             bob.TrustServerCertificate = true;
             bob.Encrypt = true;
@@ -26,8 +27,8 @@ namespace MagicData.Forms
             bob.IntegratedSecurity = !checkBox1.Checked;
             if(!bob.IntegratedSecurity)
             {
-                bob.UserID = textBox2.Text;
-                bob.Password = textBox3.Text;
+                bob.UserID = UsernmTxtbx.Text;
+                bob.Password = PasswordTxtbox.Text;
             }
             Console.WriteLine(bob.ToString());
             //return;
@@ -60,6 +61,14 @@ namespace MagicData.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             CreateConnection();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            UsernameLbl.Enabled = checkBox1.Checked;
+            PasswordLbl.Enabled = checkBox1.Checked;
+            UsernmTxtbx.Enabled = checkBox1.Checked;
+            PasswordTxtbox.Enabled = checkBox1.Checked;
         }
     }
 }

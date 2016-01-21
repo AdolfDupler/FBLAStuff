@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,8 +40,7 @@
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.ViewWindowListView = new System.Windows.Forms.ListView();
             this.IDCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.FNameCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LNameCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -54,9 +52,11 @@
             this.ActiveCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DebtCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button2 = new System.Windows.Forms.Button();
+<<<<<<< HEAD
             this.button3 = new System.Windows.Forms.Button();
+=======
+>>>>>>> origin/master
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -128,8 +128,9 @@
             // modifyToolStripMenuItem
             // 
             this.modifyToolStripMenuItem.Name = "modifyToolStripMenuItem";
-            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.modifyToolStripMenuItem.Text = "Modify";
+            this.modifyToolStripMenuItem.Click += new System.EventHandler(this.modifyToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
@@ -141,9 +142,9 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // listView1
+            // ViewWindowListView
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ViewWindowListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.IDCol,
             this.FNameCol,
             this.LNameCol,
@@ -154,6 +155,7 @@
             this.GradeCol,
             this.ActiveCol,
             this.DebtCol});
+<<<<<<< HEAD
             this.listView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(0, 24);
@@ -165,6 +167,16 @@
             this.listView1.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView1_ColumnClick);
             this.listView1.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listView1_ColumnWidthChanged);
             this.listView1.Resize += new System.EventHandler(this.listView1_Resize);
+=======
+            this.ViewWindowListView.FullRowSelect = true;
+            this.ViewWindowListView.Location = new System.Drawing.Point(12, 27);
+            this.ViewWindowListView.Name = "ViewWindowListView";
+            this.ViewWindowListView.Size = new System.Drawing.Size(825, 392);
+            this.ViewWindowListView.TabIndex = 3;
+            this.ViewWindowListView.UseCompatibleStateImageBehavior = false;
+            this.ViewWindowListView.View = System.Windows.Forms.View.Details;
+            this.ViewWindowListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView1_ColumnClick);
+>>>>>>> origin/master
             // 
             // IDCol
             // 
@@ -221,6 +233,7 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+<<<<<<< HEAD
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(384, 427);
@@ -231,21 +244,21 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
+=======
+>>>>>>> origin/master
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 461);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.ViewWindowListView);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.Text = "MagicData - Main Menu";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,13 +272,12 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modifyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView ViewWindowListView;
         private System.Windows.Forms.ColumnHeader IDCol;
         private System.Windows.Forms.ColumnHeader FNameCol;
         private System.Windows.Forms.ColumnHeader LNameCol;
@@ -275,7 +287,6 @@
         private System.Windows.Forms.ColumnHeader YearCol;
         private System.Windows.Forms.ColumnHeader GradeCol;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ColumnHeader ActiveCol;
         private System.Windows.Forms.ColumnHeader DebtCol;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
