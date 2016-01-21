@@ -33,15 +33,15 @@
             this.UsernmTxtbx = new System.Windows.Forms.TextBox();
             this.PasswordTxtbox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.DatabasecmBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.UsernameLbl = new System.Windows.Forms.Label();
             this.PasswordLbl = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.DbLabel = new System.Windows.Forms.Label();
+            this.UseConbttn = new System.Windows.Forms.Button();
+            this.Createbttn = new System.Windows.Forms.Button();
+            this.Createchckbox = new System.Windows.Forms.CheckBox();
+            this.Createtxtbx = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -50,6 +50,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(260, 20);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.Action_Deactivate);
             // 
             // checkBox1
             // 
@@ -69,6 +70,7 @@
             this.UsernmTxtbx.Name = "UsernmTxtbx";
             this.UsernmTxtbx.Size = new System.Drawing.Size(100, 20);
             this.UsernmTxtbx.TabIndex = 2;
+            this.UsernmTxtbx.TextChanged += new System.EventHandler(this.Action_Deactivate);
             // 
             // PasswordTxtbox
             // 
@@ -77,6 +79,7 @@
             this.PasswordTxtbox.Name = "PasswordTxtbox";
             this.PasswordTxtbox.Size = new System.Drawing.Size(100, 20);
             this.PasswordTxtbox.TabIndex = 3;
+            this.PasswordTxtbox.TextChanged += new System.EventHandler(this.Action_Deactivate);
             // 
             // button1
             // 
@@ -88,13 +91,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // comboBox1
+            // DatabasecmBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(18, 227);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(110, 21);
-            this.comboBox1.TabIndex = 5;
+            this.DatabasecmBox.FormattingEnabled = true;
+            this.DatabasecmBox.Location = new System.Drawing.Point(18, 227);
+            this.DatabasecmBox.Name = "DatabasecmBox";
+            this.DatabasecmBox.Size = new System.Drawing.Size(110, 21);
+            this.DatabasecmBox.TabIndex = 5;
             // 
             // label1
             // 
@@ -125,64 +128,69 @@
             this.PasswordLbl.TabIndex = 8;
             this.PasswordLbl.Text = "Password:";
             // 
-            // label4
+            // DbLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 211);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Database:";
+            this.DbLabel.AutoSize = true;
+            this.DbLabel.Location = new System.Drawing.Point(15, 211);
+            this.DbLabel.Name = "DbLabel";
+            this.DbLabel.Size = new System.Drawing.Size(56, 13);
+            this.DbLabel.TabIndex = 9;
+            this.DbLabel.Text = "Database:";
             // 
-            // button2
+            // UseConbttn
             // 
-            this.button2.Location = new System.Drawing.Point(158, 227);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Use Connection";
-            this.button2.UseVisualStyleBackColor = true;
+            this.UseConbttn.Location = new System.Drawing.Point(158, 227);
+            this.UseConbttn.Name = "UseConbttn";
+            this.UseConbttn.Size = new System.Drawing.Size(115, 23);
+            this.UseConbttn.TabIndex = 10;
+            this.UseConbttn.Text = "Use Connection";
+            this.UseConbttn.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // Createbttn
             // 
-            this.textBox4.Location = new System.Drawing.Point(18, 181);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 11;
+            this.Createbttn.Enabled = false;
+            this.Createbttn.Location = new System.Drawing.Point(158, 181);
+            this.Createbttn.Name = "Createbttn";
+            this.Createbttn.Size = new System.Drawing.Size(115, 23);
+            this.Createbttn.TabIndex = 12;
+            this.Createbttn.Text = "Create New";
+            this.Createbttn.UseVisualStyleBackColor = true;
+            this.Createbttn.Click += new System.EventHandler(this.Createbttn_Click);
             // 
-            // button3
+            // Createchckbox
             // 
-            this.button3.Location = new System.Drawing.Point(158, 181);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(115, 23);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Create New";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Createchckbox.AutoSize = true;
+            this.Createchckbox.Location = new System.Drawing.Point(18, 158);
+            this.Createchckbox.Name = "Createchckbox";
+            this.Createchckbox.Size = new System.Drawing.Size(131, 17);
+            this.Createchckbox.TabIndex = 13;
+            this.Createchckbox.Text = "Create New Database";
+            this.Createchckbox.UseVisualStyleBackColor = true;
+            this.Createchckbox.CheckedChanged += new System.EventHandler(this.Createchckbox_CheckedChanged);
             // 
-            // checkBox2
+            // Createtxtbx
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(18, 158);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(131, 17);
-            this.checkBox2.TabIndex = 13;
-            this.checkBox2.Text = "Create New Database";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.Createtxtbx.Enabled = false;
+            this.Createtxtbx.Location = new System.Drawing.Point(18, 181);
+            this.Createtxtbx.Mask = "?????????????????";
+            this.Createtxtbx.Name = "Createtxtbx";
+            this.Createtxtbx.Size = new System.Drawing.Size(110, 20);
+            this.Createtxtbx.TabIndex = 14;
             // 
             // ConnectionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Createtxtbx);
+            this.Controls.Add(this.Createchckbox);
+            this.Controls.Add(this.Createbttn);
+            this.Controls.Add(this.UseConbttn);
+            this.Controls.Add(this.DbLabel);
             this.Controls.Add(this.PasswordLbl);
             this.Controls.Add(this.UsernameLbl);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.DatabasecmBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PasswordTxtbox);
             this.Controls.Add(this.UsernmTxtbx);
@@ -202,14 +210,14 @@
         private System.Windows.Forms.TextBox UsernmTxtbx;
         private System.Windows.Forms.TextBox PasswordTxtbox;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox DatabasecmBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label UsernameLbl;
         private System.Windows.Forms.Label PasswordLbl;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Label DbLabel;
+        private System.Windows.Forms.Button UseConbttn;
+        private System.Windows.Forms.Button Createbttn;
+        private System.Windows.Forms.CheckBox Createchckbox;
+        private System.Windows.Forms.MaskedTextBox Createtxtbx;
     }
 }

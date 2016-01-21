@@ -12,9 +12,11 @@ namespace MagicData.Forms
 {
     public partial class ConnectionForm : Form
     {
+        private SqlConnection validConnection;
         public ConnectionForm()
         {
             InitializeComponent();
+            deactivate();
         }
         public void CreateConnection()
         {
@@ -35,7 +37,7 @@ namespace MagicData.Forms
             SqlCommand test = new SqlCommand("SELECT Name FROM sys.databases where (has_dbaccess(Name) > 0) AND Name NOT IN ('master', 'tempdb', 'model', 'msdb') ORDER BY 1;");
             
             test.Connection = new SqlConnection(bob.ToString());
-            
+            Cursor.Current = Cursors.WaitCursor;
             try
             {
                 test.Connection.Open();
@@ -47,14 +49,18 @@ namespace MagicData.Forms
                 test.Connection.Close();
                 return;
             }
+            validConnection = test.Connection;
+            
             SqlDataReader data = test.ExecuteReader();
-            comboBox1.Items.Clear();
+            DatabasecmBox.Items.Clear();
             while (data.Read())
             {
-                comboBox1.Items.Add(data.GetValue(0));
+                DatabasecmBox.Items.Add(data.GetValue(0));
             }
-            
-            MessageBox.Show("Connection Success");
+
+            Cursor.Current = Cursors.Default;
+            validConnection.Close();
+            activate();
 
         }
 
@@ -69,6 +75,54 @@ namespace MagicData.Forms
             PasswordLbl.Enabled = checkBox1.Checked;
             UsernmTxtbx.Enabled = checkBox1.Checked;
             PasswordTxtbox.Enabled = checkBox1.Checked;
+            deactivate();
+        }
+
+        private void Createchckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            Createbttn.Enabled = Createchckbox.Checked;
+            Createtxtbx.Enabled = Createchckbox.Checked;
+            DatabasecmBox.Enabled = !Createchckbox.Checked;
+            UseConbttn.Enabled = !Createchckbox.Checked;
+            DbLabel.Enabled = !Createchckbox.Checked;
+        }
+        private void activate()
+        {
+            Createchckbox.Enabled = true;
+            Createchckbox.Checked = true;
+        }
+        private void deactivate()
+        {
+            Createchckbox.Checked = false;
+            Createchckbox.Enabled = false;
+            DatabasecmBox.Enabled = false;
+            UseConbttn.Enabled = false;
+            DbLabel.Enabled = false;
+        }
+        private void Action_Deactivate(object sender, EventArgs e)
+        {
+            deactivate();
+        }
+
+        private void Createbttn_Click(object sender, EventArgs e)
+        {
+            SqlCommand command = new SqlCommand();
+            command.CommandText = String.Format("CREATE DATABASE {0};", Createtxtbx.Text);
+            command.Connection = validConnection;
+            validConnection.Open();
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch(Exception exc)
+            {
+                MessageBox.Show(exc.Message + " " + command.CommandText);
+                validConnection.Close();
+                return;
+            }
+            validConnection.Close();
+            Console.WriteLine(command.CommandText);
+
         }
     }
 }
