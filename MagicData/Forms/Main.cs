@@ -21,14 +21,14 @@ namespace MagicData
         public string loadedPath = "", loadedName;
         private List<Member> LoadedData = new List<Member>();
         public SqlConnection current;
-        private string title = "MagicData - Main Menu";
-<<<<<<< HEAD
-        private float[] columnPercents = { .09f, 0.09f, .09f, .18f, .04f, .2f, .05f, .1f, .05f, .1f };
-=======
+        public string title = "MagicData - Main Menu";
+        
+        private float[] columnPercents = { .07f, 0.09f, .09f, .18f, .04f, .2f, .08f, .1f, .05f, .10f };
+
         /// <summary>
         /// This is the default constructor. Add to it but beware.
         /// </summary>
->>>>>>> origin/master
+
         public Main()
         {
             InitializeComponent();
@@ -36,6 +36,7 @@ namespace MagicData
             saveFileDialog1.DefaultExt = "mdf";
             openFileDialog1.Filter = "Database Files | *.mdf";
             openFileDialog1.DefaultExt = "mdf";
+            scaleColumns();
         }
 
         
@@ -108,7 +109,7 @@ namespace MagicData
             current = new SqlConnection();
             current.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; Integrated Security = True;";
             current.ConnectionString += "AttachDBFilename =" + loadedPath;
-            this.Text = title + " - " + loadedName;
+            
 
             SqlCommand command = new SqlCommand();
             current.Open();
@@ -193,28 +194,26 @@ namespace MagicData
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            new ConnectionForm().Show();
+            new ConnectionForm(this).Show();
         }
 
-<<<<<<< HEAD
+
         private void listView1_Resize(object sender, EventArgs e)
         {
             scaleColumns();
         }
         private void scaleColumns()
         {
-            for(int i =0; i < 10; i++)
+            
+            for (int i =0; i < 10; i++)
             {
-                listView1.Columns[i].Width = (int)(listView1.Width * columnPercents[i]);
+                ViewWindowListView.Columns[i].Width = (int)(ViewWindowListView.Width * columnPercents[i]);
             }
+            
         }
 
-        private void listView1_ColumnWidthChanged(object sender, ColumnWidthChangedEventArgs e)
-        {
+        
 
-        }
-
-=======
         private void modifyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ModMember form = new ModMember(LoadedData.ElementAt(ViewWindowListView.SelectedIndices[0]));
@@ -227,7 +226,7 @@ namespace MagicData
         /// This loads all the data from the database into the form, as well
         /// as refreshing it.
         /// </summary>
->>>>>>> origin/master
+
         public void PullData()
         {
             LoadedData.Clear();
@@ -235,9 +234,11 @@ namespace MagicData
             {
                 return;
             }
+            
             SqlCommand query = new SqlCommand("SELECT * FROM Members;");
             query.Connection = current;
             current.Open();
+            this.Text = title + " - " + current.Database;
             SqlDataReader data = query.ExecuteReader();
             
 

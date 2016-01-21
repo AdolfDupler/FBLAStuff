@@ -145,6 +145,7 @@
             this.UseConbttn.TabIndex = 10;
             this.UseConbttn.Text = "Use Connection";
             this.UseConbttn.UseVisualStyleBackColor = true;
+            this.UseConbttn.Click += new System.EventHandler(this.UseConbttn_Click);
             // 
             // Createbttn
             // 

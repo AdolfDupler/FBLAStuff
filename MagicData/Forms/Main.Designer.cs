@@ -52,10 +52,6 @@
             this.ActiveCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DebtCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button2 = new System.Windows.Forms.Button();
-<<<<<<< HEAD
-            this.button3 = new System.Windows.Forms.Button();
-=======
->>>>>>> origin/master
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -128,7 +124,7 @@
             // modifyToolStripMenuItem
             // 
             this.modifyToolStripMenuItem.Name = "modifyToolStripMenuItem";
-            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.modifyToolStripMenuItem.Text = "Modify";
             this.modifyToolStripMenuItem.Click += new System.EventHandler(this.modifyToolStripMenuItem_Click);
             // 
@@ -155,28 +151,16 @@
             this.GradeCol,
             this.ActiveCol,
             this.DebtCol});
-<<<<<<< HEAD
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.listView1.FullRowSelect = true;
-            this.listView1.Location = new System.Drawing.Point(0, 24);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(850, 392);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView1_ColumnClick);
-            this.listView1.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listView1_ColumnWidthChanged);
-            this.listView1.Resize += new System.EventHandler(this.listView1_Resize);
-=======
+            this.ViewWindowListView.Dock = System.Windows.Forms.DockStyle.Top;
             this.ViewWindowListView.FullRowSelect = true;
-            this.ViewWindowListView.Location = new System.Drawing.Point(12, 27);
+            this.ViewWindowListView.Location = new System.Drawing.Point(0, 24);
             this.ViewWindowListView.Name = "ViewWindowListView";
-            this.ViewWindowListView.Size = new System.Drawing.Size(825, 392);
+            this.ViewWindowListView.Size = new System.Drawing.Size(850, 392);
             this.ViewWindowListView.TabIndex = 3;
             this.ViewWindowListView.UseCompatibleStateImageBehavior = false;
             this.ViewWindowListView.View = System.Windows.Forms.View.Details;
             this.ViewWindowListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView1_ColumnClick);
->>>>>>> origin/master
+            this.ViewWindowListView.SizeChanged += new System.EventHandler(this.listView1_Resize);
             // 
             // IDCol
             // 
@@ -233,19 +217,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-<<<<<<< HEAD
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(384, 427);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
-=======
->>>>>>> origin/master
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

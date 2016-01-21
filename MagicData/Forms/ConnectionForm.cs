@@ -13,8 +13,11 @@ namespace MagicData.Forms
     public partial class ConnectionForm : Form
     {
         private SqlConnection validConnection;
-        public ConnectionForm()
+        private Main parent;
+
+        public ConnectionForm(Main parent)
         {
+            this.parent = parent;
             InitializeComponent();
             deactivate();
         }
@@ -122,6 +125,34 @@ namespace MagicData.Forms
             }
             validConnection.Close();
             Console.WriteLine(command.CommandText);
+
+        }
+
+        private void UseConbttn_Click(object sender, EventArgs e)
+        {
+            SqlConnectionStringBuilder bob = new SqlConnectionStringBuilder();
+            bob.AttachDBFilename = DatabasecmBox.Text;
+            Console.WriteLine(validConnection.ConnectionString + ";" + bob.ToString());
+            
+            SqlCommand command = new SqlCommand();
+            try {
+                validConnection.Open();
+            }
+            catch(Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+                return;
+            }
+            command.Connection = validConnection;
+            command.CommandText = "IF( NOT EXISTS (SELECT * FROM sys.tables WHERE [name] = 'Members'))BEGIN CREATE TABLE Members (MemberID int NOT NULL, FirstName nvarchar(13), LastName nvarchar(13), SchoolName nvarchar(50), State nvarchar(2), Email nvarchar(50), YearJoined int, Grade int, Active bit, AmountOwed money, PRIMARY KEY (MemberID)) END;";
+            command.ExecuteNonQuery();
+            validConnection.Close();
+            parent.current = validConnection;
+            parent.PullData();
+            this.Close();
+
+
+
 
         }
     }
