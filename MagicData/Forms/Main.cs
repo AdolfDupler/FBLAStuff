@@ -222,6 +222,14 @@ namespace MagicData
             form.Show();
         }
 
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           if (MessageBox.Show("Are you sure you want to delete the selected " + ViewWindowListView.SelectedItems.Count + " item(s)?","Delete.", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                Console.WriteLine("wew");
+            }
+        }
+
         /// <summary>
         /// This loads all the data from the database into the form, as well
         /// as refreshing it.

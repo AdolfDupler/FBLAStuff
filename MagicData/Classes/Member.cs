@@ -179,6 +179,13 @@ namespace MagicData.Classes
 
 
         }
+        public SqlCommand DropFromSQL()
+        {
+            SqlCommand com = new SqlCommand("DELETE FROM Members WHERE MemberID = @MemberID;");
+            com.Parameters.Add("@MemberID", SqlDbType.Int).Value = MemberID;
+            return com;
+            
+        }
         
         
     }
