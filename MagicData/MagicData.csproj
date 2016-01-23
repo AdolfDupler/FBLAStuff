@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\AdvSearch.cs" />
+    <Compile Include="Classes\ExcelExport.cs" />
     <Compile Include="Classes\Member.cs" />
     <Compile Include="Database1DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -104,6 +105,12 @@
     <Compile Include="Forms\ConnectionForm.Designer.cs">
       <DependentUpon>ConnectionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Export.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Export.Designer.cs">
+      <DependentUpon>Export.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ConnectionForm.resx">
       <DependentUpon>ConnectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Export.resx">
+      <DependentUpon>Export.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

@@ -230,6 +230,11 @@ namespace MagicData
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new Export().Show();
+        }
+
         /// <summary>
         /// This loads all the data from the database into the form, as well
         /// as refreshing it.

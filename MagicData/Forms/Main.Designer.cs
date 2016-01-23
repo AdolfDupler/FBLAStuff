@@ -52,7 +52,10 @@
             this.ActiveCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DebtCol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.database1DataSet1 = new MagicData.Database1DataSet();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -117,21 +120,21 @@
             // registerToolStripMenuItem
             // 
             this.registerToolStripMenuItem.Name = "registerToolStripMenuItem";
-            this.registerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.registerToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.registerToolStripMenuItem.Text = "Register";
             this.registerToolStripMenuItem.Click += new System.EventHandler(this.registerToolStripMenuItem_Click);
             // 
             // modifyToolStripMenuItem
             // 
             this.modifyToolStripMenuItem.Name = "modifyToolStripMenuItem";
-            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.modifyToolStripMenuItem.Text = "Modify";
             this.modifyToolStripMenuItem.Click += new System.EventHandler(this.modifyToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.deleteToolStripMenuItem.Text = "Delete]";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -218,11 +221,27 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(287, 423);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // database1DataSet1
+            // 
+            this.database1DataSet1.DataSetName = "Database1DataSet";
+            this.database1DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 461);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.ViewWindowListView);
             this.Controls.Add(this.menuStrip1);
@@ -231,6 +250,7 @@
             this.Text = "MagicData - Main Menu";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,6 +282,8 @@
         private System.Windows.Forms.ColumnHeader ActiveCol;
         private System.Windows.Forms.ColumnHeader DebtCol;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.Button button1;
+        private Database1DataSet database1DataSet1;
     }
 }
 
