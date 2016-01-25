@@ -19,13 +19,24 @@ namespace MagicData.Classes
             FileInfo tempPath = new FileInfo(templatePath);
             pack = new ExcelPackage(outPath,tempPath);
             sheet = pack.Workbook.Worksheets.First();
+            BuildReport();
             
 
         }
         public void BuildReport()
         {
             sheet.Cells["A4"].Value = "Nice";
-            pack.Save();   
+            
+        }
+        public void ToPdf(string path)
+        {
+            
+            pack.SaveAs(new FileInfo(path));
+            
+        }
+        public void ToXLSX()
+        {
+            pack.Save();
         }
     }
 }
