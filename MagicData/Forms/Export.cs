@@ -23,7 +23,7 @@ namespace MagicData.Forms
             {
                 string temp = openFileDialog1.FileName;
                 string path = saveFileDialog1.FileName;
-                new ExcelExport(temp, path).ToXLSX();
+                new ExcelExport(temp, path);
             }
             else
             {
@@ -37,7 +37,7 @@ namespace MagicData.Forms
             {
                 string temp = openFileDialog1.FileName;
                 string path = saveFileDialog1.FileName;
-                new ExcelExport(temp, path).ToPdf(path);
+                new ExcelExport(temp, path).SaveAndExport(true, true);
             }
             else
             {

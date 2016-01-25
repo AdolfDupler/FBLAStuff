@@ -1,4 +1,5 @@
 ﻿using OfficeOpenXml;
+using Spire.Xls;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,14 +11,17 @@ namespace MagicData.Classes
     public class ExcelExport
     {
 
+        public static string TemplatePath;
         ExcelPackage pack;
         ExcelWorksheet sheet;
+        public FileInfo fileinfo;
 
         public ExcelExport(string templatePath, string outputDir)
         {
-            FileInfo outPath = new FileInfo(outputDir);
+            fileinfo = new FileInfo(@"Report.xlsx");
             FileInfo tempPath = new FileInfo(templatePath);
-            pack = new ExcelPackage(outPath,tempPath);
+            
+            pack = new ExcelPackage(fileinfo,tempPath);
             sheet = pack.Workbook.Worksheets.First();
             BuildReport();
             
@@ -28,15 +32,17 @@ namespace MagicData.Classes
             sheet.Cells["A4"].Value = "Nice";
             
         }
-        public void ToPdf(string path)
-        {
-            
-            pack.SaveAs(new FileInfo(path));
-            
-        }
-        public void ToXLSX()
+        public void SaveAndExport(bool excel, bool pdf)
         {
             pack.Save();
+            pack.Dispose();
+            if (pdf)
+            {
+                Workbook pdfWork = new Workbook();
+                pdfWork.LoadFromFile(@"Report.xlsx");
+                pdfWork.SaveToFile(fileinfo.FullName.Replace(".xlsx", ".pdf"), Spire.Xls.FileFormat.PDF);
+            }
+           
         }
     }
 }

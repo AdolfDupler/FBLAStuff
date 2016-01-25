@@ -235,6 +235,11 @@ namespace MagicData
             new Export().Show();
         }
 
+        private void preferencesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Preferences().Show();
+        }
+
         /// <summary>
         /// This loads all the data from the database into the form, as well
         /// as refreshing it.
