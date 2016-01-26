@@ -11,15 +11,15 @@ namespace MagicData.Classes
     public class ExcelExport
     {
 
-        public static string TemplatePath;
+        public static readonly string TemplatePath = @"Assets/Template.xltx";
         ExcelPackage pack;
         ExcelWorksheet sheet;
         public FileInfo fileinfo;
 
-        public ExcelExport(string templatePath, string outputDir)
+        public ExcelExport(string outputDir, List<Member> data)
         {
             fileinfo = new FileInfo(@"Report.xlsx");
-            FileInfo tempPath = new FileInfo(templatePath);
+            FileInfo tempPath = new FileInfo(TemplatePath);
             
             pack = new ExcelPackage(fileinfo,tempPath);
             sheet = pack.Workbook.Worksheets.First();

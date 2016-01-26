@@ -23,7 +23,7 @@ namespace MagicData.Forms
             {
                 string temp = openFileDialog1.FileName;
                 string path = saveFileDialog1.FileName;
-                new ExcelExport(temp, path);
+                new ExcelExport(path, new List<Member>());
             }
             else
             {
